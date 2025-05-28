@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html">
+<head>
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" type="text/css" href="#{request.contextPath}/css/main.css"/>
+</head>
+<body>
+    <h:form>
+        <h2>Formulário de Contato</h2>
+
+        <h:messages style="color: green; margin-bottom: 10px;" />
+
+        <h:panelGrid columns="3" columnClasses="label,field,message">
+           
+            <h:outputLabel for="nome" value="Nome:" />
+            <h:inputText id="nome" value="#{contato.nome}" required="true" styleClass="campo-texto"/>
+            <h:message for="nome" style="color: red;"/>
+
+            
+            <h:outputLabel for="sobrenome" value="Sobrenome:" />
+            <h:inputText id="sobrenome" value="#{contato.sobrenome}" required="true" styleClass="campo-texto"/>
+            <h:message for="sobrenome" style="color: red;"/>
+
+           
+            <h:outputLabel for="telefone" value="Telefone:" />
+            <h:inputText id="telefone" value="#{contato.telefone}" required="true" styleClass="campo-texto"/>
+            <h:message for="telefone" style="color: red;"/>
+
+        
+            <h:outputLabel for="email" value="E-mail:" />
+            <h:inputText id="email" value="#{contato.email}" required="true" styleClass="campo-texto"/>
+            <h:message for="email" style="color: red;"/>
+
+       
+            <h:outputLabel for="mensagem" value="Mensagem:" />
+            <h:inputTextarea id="mensagem" value="#{contato.mensagem}" required="true"
+                              rows="4" cols="30" styleClass="campo-texto"/>
+            <h:message for="mensagem" style="color: red;"/>
+        </h:panelGrid>
+
+        <br/>
+
+        <h:commandButton value="Enviar" action="#{contato.enviar}" styleClass="botao-enviar"/>
+    </h:form>
+</body>
+</html>
